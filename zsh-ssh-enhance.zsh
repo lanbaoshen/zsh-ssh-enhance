@@ -140,7 +140,7 @@ _ssh_selector() {
     "\(.key)\t\(.value.HostName // "N/A")\t\(.value.User // "N/A")\t\((.value["#Password"] // "N/A") | if . != "N/A" then "******" else . end)"
   ')
 
-  local selected=$(echo "$host_list" | fzf --prompt="Select a host (Load from ${SSH_CONFIG_FILE}): " --height=10 --reverse --header="Host|HostName|User|#Password" --with-nth=1,2,3,4)
+  local selected=$(echo "$host_list" | fzf --prompt="Select a host (Load from ${SSH_CONFIG_FILE}): " --height=13 --reverse --header="Host|HostName|User|#Password" --with-nth=1,2,3,4)
   if [[ -z "$selected" ]]; then
     echo "No host selected."
     return 1
