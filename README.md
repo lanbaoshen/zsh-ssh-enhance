@@ -1,11 +1,9 @@
 # zsh-ssh-enhance
-Using `sshpass` to better handle `ssh` password autofill
+Support `ssh` selector and using `sshpass` to better handle `ssh` & `scp` password autofill
 
 ## Installation
 
 ## Oh My Zsh
-Make sure you have [sshpass](https://sourceforge.net/projects/sshpass/) installed.
-
 1. Clone this repository into `$ZSH_CUSTOM/plugins` (by default `~/.oh-my-zsh/custom/plugins`)
 ```shell
 git clone https://github.com/lanbaoshen/zsh-ssh-enhance.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-ssh-enhance
@@ -36,19 +34,28 @@ source ~/.zsh/zsh-ssh-enhance/zsh-ssh-enhance.zsh
 
 ## Feature
 
-### Password autofill
-Just configure the `#Password` in the `~/.ssh/config`, then use `ssh` as usual. 
+### SSH Selector
+Make sure you have [fzf](https://github.com/junegunn/fzf) installed.
+
+Type `ssh` and hit `Enter` to run a bare `ssh` command with no arguments.
+
+This plugin shows a list of hosts from `~/.ssh/config`, which you can navigate with arrow keys or mouse to connect.
+
+### Password Autofill
+Make sure you have [sshpass](https://sourceforge.net/projects/sshpass/) installed.
+
+Just configure the `#Password` in the `~/.ssh/config`, then use `ssh` & `scp` as usual. 
 
 This plugin will determine whether to use `sshpass`.
 
 `~/.ssh/config` example:
 ```
 Host Worker0
-    Hostname 0.0.0.0
+    HostName 0.0.0.0
     User lanbaoshen
 
 Host Worker1
-    Hostname 1.1.1.1
+    HostName 1.1.1.1
     User lanbaoshen
     #Password 12345678
 ```
