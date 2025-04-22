@@ -1,6 +1,10 @@
 # zsh-ssh-enhance
 Support `ssh` selector and using `sshpass` to better handle `ssh` & `scp` password autofill
 
+<img width="531" alt="Screenshot 2025-04-22 at 15 13 59" src="https://github.com/user-attachments/assets/cb0ae397-b261-4705-aa45-11040ad6d121" />
+
+<img width="680" alt="Screenshot 2025-04-22 at 15 13 23" src="https://github.com/user-attachments/assets/677c99ed-313c-4982-873a-3dcbe6d1caf3" />
+
 ## Installation
 
 ## Oh My Zsh
